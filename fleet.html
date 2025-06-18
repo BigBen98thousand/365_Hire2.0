@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleet | 365 Hire</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 80px;
+      margin-right: 10px;
+    }
+    .logo h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+    .navbar-links {
+      display: flex;
+    }
+    @media (max-width: 768px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        background-color: #000;
+        padding: 20px;
+        z-index: 999;
+        width: 200px;
+        border-radius: 10px;
+      }
+      .navbar-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+    .fleet-section {
+      padding: 60px 10%;
+    }
+    .car-item {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    .car-item img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    .car-info {
+      flex: 1;
+    }
+    .car-info h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      border-bottom: 3px solid #FFD700;
+      display: inline-block;
+    }
+    .car-info p {
+      margin: 10px 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .price {
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .old-price {
+      color: #777;
+      text-decoration: line-through;
+      margin-right: 10px;
+    }
+    .car-info a {
+      display: inline-block;
+      background-color: #FFD700;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .booking-section {
+      background-color: #111;
+      padding: 60px 10%;
+    }
+    .booking-section h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+    form input, form select, form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #FFD700;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 10%;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+    footer p {
+      margin: 10px 0;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="365 Hire Logo">
+      <h1>365 Car Hire</h1>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+</header>  <section class="fleet-section">
+    <div class="car-item">
+      <img src="t2.jpg" alt="Audi A7">
+      <div class="car-info">
+        <h2>Audi A7</h2>
+        <p class="price">£160/day</p>
+        <p>A bold mix of style and performance, the Audi A7 is perfect for luxury road trips and executive transport.</p>
+        <a href="#booking">Book Now</a>
+      </div>
+    </div>
+    <div class="car-item">
+      <img src="tesla1.jpg" alt="Tesla Model X">
+      <div class="car-info">
+        <h2>Tesla Model X</h2>
+        <p><span class="old-price">£250/day</span><span class="price">£220/day (Limited Offer)</span></p>
+        <p>The ultimate electric experience. Spacious, silent, and futuristic — now available with a seasonal discount.</p>
+        <a href="#booking">Book Now</a>
+      </div>
+    </div>
+    <div class="car-item">
+      <img src="merce.jpg" alt="Mercedes GLC Coupe">
+      <div class="car-info">
+        <h2>Mercedes GLC Coupe</h2>
+        <p class="price">£180/day</p>
+        <p>A premium SUV with elegance and strength. Ideal for business, leisure, or family rides around the city.</p>
+        <a href="#booking">Book Now</a>
+      </div>
+    </div>
+    <div class="car-item">
+      <img src="audi.jpg" alt="Mercedes E400">
+      <div class="car-info">
+        <h2>Mercedes E400</h2>
+        <p class="price">£170/day</p>
+        <p>Sophisticated and smooth, the E400 delivers high-end comfort and technology in every drive.</p>
+        <a href="#booking">Book Now</a>
+      </div>
+    </div>
+    <div class="car-item">
+      <img src="bmw.jpg" alt="BMW X4 Drive">
+      <div class="car-info">
+        <h2>BMW X4 Drive</h2>
+        <p class="price">£175/day</p>
+        <p>A sporty and aggressive look with BMW’s renowned handling. A fun drive wrapped in premium comfort.</p>
+        <a href="#booking">Book Now</a>
+      </div>
+    </div>
+  </section>  <section class="booking-section" id="booking">
+    <h2>Book a Car</h2>
+    <form style="font-style: italic;">
+      <input type="text" placeholder="Your Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Vehicle</option>
+        <option value="audi-a7">Audi A7</option>
+        <option value="tesla-model-x">Tesla Model X</option>
+        <option value="mercedes-glc">Mercedes GLC Coupe</option>
+        <option value="mercedes-e400">Mercedes E400</option>
+        <option value="bmw-x4">BMW X4 Drive</option>
+      </select>
+      <textarea rows="4" placeholder="Any special request or message..."></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>  <footer>
+    <p>© 2025 365 Car Hire. Based in London, UK.</p>
+    <p>Instagram/Facebook: <strong>@365carhire</strong></p>
+    <p>Email: info@365hire.co.uk | Phone/WhatsApp: +44 7300 232615</p>
+  </footer>  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.navbar-links');
+      navLinks.classList.toggle('active');
+    }
+  </script></body>
+</html>

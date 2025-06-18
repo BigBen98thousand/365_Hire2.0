@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>365 Hire - Luxury Car Rentals</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #000;
+      position: relative;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 80px;
+      margin-right: 10px;
+    }
+    .logo h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      color: #FFD700;
+      transform: translateY(-2px);
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        background-color: #000;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+      nav.show {
+        display: flex;
+      }
+      .menu-icon {
+        display: flex;
+      }
+      .section1 p,
+      .section2 p,
+      .spotlight-text,
+      .terms-box {
+        text-align: center;
+      }
+    }
+
+    .hero {
+      background: url('great.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: left;
+      padding: 150px 10%;
+      position: relative;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 3px black;
+    }
+
+    .hero a {
+      padding: 12px 24px;
+      font-size: 1rem;
+      margin-right: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .book-btn {
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .call-btn {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .book-btn:hover,
+    .call-btn:hover {
+      background-color: #e6c200;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .section1,
+    .section2 {
+      padding: 60px 10%;
+    }
+
+    .section2 {
+      background: url('zip.jpg') center/cover no-repeat;
+      text-shadow: 2px 2px 3px black;
+    }
+
+    .section2 p {
+      max-width: 800px;
+      margin: 10px auto 40px;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .section2 a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .section2 h2,
+    .section1 h2 {
+      text-align: center;
+    }
+
+    .section1 p {
+      max-width: 800px;
+      margin: 10px auto 40px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .categories,
+    .trending {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .car-card {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+      border-radius: 10px;
+      color: yellow;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 3px 4px white;
+    }
+
+    .car-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .car-card button {
+      margin-top: 10px;
+      background-color: #FFD700;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .bug {
+      background-color: #FFD700;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100px;
+      justify-self: center;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .bug a {
+      color: white;
+      text-decoration: none;
+      font-weight: ;
+      transition: all 0.3s ease;
+    }
+
+    .bug:hover,
+    .bug a:hover {
+      background-color: #e6c200;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .spotlight {
+      background-color: #111;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .spotlight h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .spotlight-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spotlight-content img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .spotlight-text {
+      max-width: 500px;
+    }
+
+    .spotlight-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #FFD700;
+    }
+
+    .spotlight-text p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .terms-condition {
+      padding: 40px 10%;
+      background-color: black;
+    }
+
+    .terms-box {
+      background-color: #222;
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .terms-box h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    .terms-box p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #000;
+      color: #fff;
+      padding: 60px 10% 30px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-brand h2 {
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a,
+    .footer-contact a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="365 Hire Logo">
+      <h1>365 Car Hire</h1>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Premium car rental service based in London</h2>
+    <a href="fleet.html" class="book-btn">View Vehicles</a>
+    <a href="contact.html"  class="call-btn">Contact Us</a>
+  </section>  
+
+
+  <section class="section1">
+    <h1 style="text-align: center;">Welcome To 365 Car Hire</h1>
+    <p style="color:#FFD700; text-align: left">At 365 Hire, we specialize in offering a curated selection of premium vehicles. Whether you're heading to an event, a business meeting, or just want to ride in style, choose from our top-tier Mercedes-Benz, BMW, and Audi fleets.</p>
+    <h2>Car Categories</h2>
+    <div class="categories">
+      <div class="car-card">
+        <img src="merce.jpg" alt="Mercedes-Benz">
+        <h3>Mercedes-Benz</h3>
+      </div>
+      <div class="car-card">
+        <img src="t2.jpg" alt="Audi">
+        <h3>Audi</h3>
+      </div>
+      <div class="car-card">
+        <img src="bmw2.jpg" alt="BMW">
+        <h3>BMW</h3>
+      </div>
+    </div>
+  </section> 
+  
+  <section class="section2">
+    <h1 style="color: white; text-align: center; font-size: 27px;">Trending Vehicles</h1>
+    <h3 style="color: #FFD700; text-align: center;">Discover what’s hot and trending in our luxury collection. These top picks are customer favorites for their comfort, performance, and unforgettable driving experience.</h3>
+   <br><br>
+    <div class="trending">
+      <div class="car-card">
+        <img src="t1.jpg" alt="BMW i4">
+        <h3>GlC Coupe</h3>
+        <div class="bug"><a href="fleet.html" >Book vehicle</a></div>
+      </div>
+      <div class="car-card">
+        <img src="great.jpg" alt="">
+        <h3>BMW 4x 4 Drpive</h3>
+        <div class="bug"><a href="fleet.html" >Book vehicle</a></div>
+      </div>
+      <div class="car-card">
+        <img src="audi.jpg" alt="Mercedes S-Class">
+        <h3>Mercedes E400</h3>
+        <div class="bug"><a href="fleet.html">Book vehicle</a></div>
+      </div>
+    </div>
+  </section>
+  
+<section class="section spotlight">
+  <h2>This Month’s Spotlight — <span style="color: #FFD700;">Tesla Model X</span></h2>
+  <div class="spotlight-content">
+    <img src="tesla1.jpg" alt="Tesla Model S">
+    <div class="spotlight-text">
+      <h3>“The Future of Driving.”</h3>
+      <p>Experience electric luxury like never before. Smooth, silent, and packed with cutting-edge tech — the Tesla Model S is the ride of tomorrow, available today at 365 Hire.</p>
+      <a href="fleet.html" class="book-btn"   style="padding: 10px; text-decoration: none; border-radius: 5px;"  >Book Now</a>
+      <a href="contact.html" class="call-btn"  style="padding: 10px; text-decoration: none; border-radius: 5px;"  >Contact Us</a>
+       
+    </div>
+  </div>
+</section>
+
+<section class="terms-condition">
+  <div class="terms-box">
+    <h2>Terms & Conditions</h2>
+    <p><strong>1. ELIGIBILITY</strong><br> Renters must be at least 19 years of age (age may vary by car).<br> Proof of valid driver’s license, and a DVLA check code.</p>
+    <p><strong>2. RENTAL PERIOD</strong><br> The rental period begins when the vehicle is picked up and ends when it is returned.<br> Late returns may incur additional charges.</p>
+    <p><strong>3. PAYMENT & DEPOSIT</strong><br> Fees must be paid at the time of pickup or as specified. We accept cash and bank transfer only.</p>
+    <p><strong>4. INSURANCE</strong><br> All our vehicles come with fully comprehensive insurance.</p>
+    <p><strong>5. FUEL POLICY</strong><br> Vehicles are provided with a full tank of gas, requiring return with a full tank; failure to do so will lead to additional charges, plus an admin fee.</p>
+    <p><strong>6. MILEAGE</strong><br> All our cars include a mileage acceptance of 200 miles per day, 1500 miles per week, and 7000 miles per month.</p>
+    <p><strong>7. VEHICLE USE</strong><br> The vehicle can only be driven by authorized drivers listed in the rental agreement.</p>
+    <p><strong>8. MAINTENANCE & REPAIRS</strong><br> Please report any mechanical issues promptly.<br> Unauthorized repairs or modifications may lead to additional charges.</p>
+    <p><strong>9. ACCIDENTS & DAMAGE</strong><br> Any damages or accidents to the vehicle should be reported directly to us.<br> Responsibility for damages may vary based on the rental agreement and insurance.</p>
+    <p><strong>10. CANCELLATION POLICY</strong><br> Free Cancellation Period: Customers can cancel their booking up to 48 hours before the scheduled pickup time without any charges.<br> Cancellation Fees: A fee of £50.00 will be applied to cancellations made less than 48 hours before pickup. Cancellations on the day will result in a 100% fee of the first day's rental cost.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="logo.jpg" alt="" style="height: 60px;">
+      <h2>365 car Hire</h2>
+      <p>Premium car rental service based in London.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Phone / WhatsApp: <a href="https://wa.me/447300232615" target="_blank">+44 7300 232615</a></p>
+      <p>Email: <a href="mailto:info@365hire.co.uk">info@365hire.co.uk</a></p>
+      <p>Instagram: <a href="https://instagram.com/365carhire" target="_blank">@365carhire</a></p>
+      <p>Facebook: <a href="https://facebook.com/365carhire" target="_blank">365carhire</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025  365 car Hire. All rights reserved.</p>
+  </div>
+</footer>
+  
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+</html
