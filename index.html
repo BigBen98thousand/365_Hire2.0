@@ -336,6 +336,61 @@
         gap: 30px;
       }
     }
+
+
+
+.car-style {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background-color: #1a1a1a;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-wrap: wrap;
+}
+.car-style:hover {
+  transform: translateY(-5px);
+}
+.car-style img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px 0 0 10px;
+}
+.car-style-text {
+  flex: 1;
+  padding: 20px;
+}
+.car-style-text h3 {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+.car-style-text p {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.6;
+}
+.fleet-btn {
+  background-color: #FFD700;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.fleet-btn:hover {
+  background-color: #000;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -361,50 +416,71 @@
     <a href="fleet.html" class="book-btn">View Vehicles</a>
     <a href="contact.html"  class="call-btn">Contact Us</a>
   </section>  
-
-
   <section class="section1">
-    <h1 style="text-align: center; "color:#FFD700;" >Welcome To 365 Car Hire</h1>
-    <p style="color:white; text-align: left">At 365 Hire, we specialize in offering a curated selection of premium vehicles. Whether you're heading to an event, a business meeting, or just want to ride in style, choose from our top-tier Mercedes-Benz, BMW, and Audi fleets.</p>
-    <h2>Car Categories</h2>
-    <div class="categories">
-      <div class="car-card">
-        <img src="merce.jpg" alt="Mercedes-Benz">
-        <h3>Mercedes-Benz</h3>
-      </div>
-      <div class="car-card">
-        <img src="t2.jpg" alt="Audi">
-        <h3>Audi</h3>
-      </div>
-      <div class="car-card">
-        <img src="bmw2.jpg" alt="BMW">
-        <h3>BMW</h3>
-      </div>
+  <h1 style="text-align: center;">Welcome To 365 Car Hire</h1>
+  <p style="color:#FFD700; text-align: left">At 365 Hire, we specialize in offering a curated selection of premium vehicles. Whether you're heading to an event, a business meeting, or just want to ride in style, choose from our top-tier Mercedes-Benz, BMW, and Audi fleets.</p>
+
+  <h2>Car Categories</h2>
+
+  <div class="car-style">
+    <img src="merce.jpg" alt="Mercedes-Benz">
+    <div class="car-style-text">
+      <h3>Mercedes-Benz</h3>
+      <p>Explore our range of Mercedes cars known for their elegance, comfort, and performance. Perfect for both business and luxury trips.</p>
     </div>
-  </section> 
-  
-  <section class="section2">
-    <h1 style="color: #FFD700; text-align: center; font-size: 27px;">Trending Vehicles</h1>
-    <h3 style="color: white; text-align: center;">Discover what’s hot and trending in our luxury collection. These top picks are customer favorites for their comfort, performance, and unforgettable driving experience.</h3>
-   <br><br>
-    <div class="trending">
-      <div class="car-card">
-        <img src="t1.jpg" alt="BMW i4">
-        <h3>GlC Coupe</h3>
-        <div class="bug"><a href="fleet.html" >Book vehicle</a></div>
-      </div>
-      <div class="car-card">
-        <img src="great.jpg" alt="">
-        <h3>BMW 4x 4 Drpive</h3>
-        <div class="bug"><a href="fleet.html" >Book vehicle</a></div>
-      </div>
-      <div class="car-card">
-        <img src="audi.jpg" alt="Mercedes S-Class">
-        <h3>Mercedes E400</h3>
-        <div class="bug"><a href="fleet.html">Book vehicle</a></div>
-      </div>
+  </div>
+
+  <div class="car-style">
+    <img src="t2.jpg" alt="Audi">
+    <div class="car-style-text">
+      <h3>Audi</h3>
+      <p>Stylish, modern, and reliable. Audi cars deliver great handling and prestige in every journey.</p>
     </div>
-  </section>
+  </div>
+
+  <div class="car-style">
+    <img src="bmw2.jpg" alt="BMW">
+    <div class="car-style-text">
+      <h3>BMW</h3>
+      <p>Drive with passion and performance. Our BMW fleet offers the ultimate driving machine experience in style and safety.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section2">
+  <h1 style="color: white; text-align: left; font-size: 27px;">Trending Vehicles</h1>
+  <h3 style="color: #FFD700; text-align: left;">Discover what’s hot and trending in our luxury collection. These top picks are customer favorites for their comfort, performance, and unforgettable driving experience.</h3>
+  <br><br>
+
+  <div class="car-style">
+    <img src="t1.jpg" alt="Mercedes GLC Coupe">
+    <div class="car-style-text">
+      <h3>GLC Coupe</h3>
+      <p>A refined SUV blending sportiness with elegance. A favorite among those who demand a bold presence and smooth ride.</p>
+      <a href="fleet.html" class="fleet-btn">Book Vehicle</a>
+    </div>
+  </div>
+
+  <div class="car-style">
+    <img src="great.jpg" alt="BMW X4 Drive">
+    <div class="car-style-text">
+      <h3>BMW 4x4 Drive</h3>
+      <p>A powerful and sleek SUV, combining all-wheel drive with top-tier comfort. Built for adventure and urban luxury.</p>
+      <a href="fleet.html" class="fleet-btn">Book Vehicle</a>
+    </div>
+  </div>
+
+  <div class="car-style">
+    <img src="audi.jpg" alt="Mercedes E400">
+    <div class="car-style-text">
+      <h3>Mercedes E400</h3>
+      <p>Experience superior handling and exceptional comfort. The E400 offers a smooth ride with a bold attitude.</p>
+      <a href="fleet.html" class="fleet-btn">Book Vehicle</a>
+    </div>
+  </div>
+</section>
+
+
   
 <section class="section spotlight">
   <h2>This Month’s Spotlight — <span style="color: #FFD700;">Tesla Model X</span></h2>
